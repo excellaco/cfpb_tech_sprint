@@ -1,9 +1,9 @@
-data,line_type
+Data,"Line Type (constant_text, account_number, bill_date, bill_issue_date, bill_date_range, bill_amount, bill_balance, amount_due, next_cycle_amount_due, client_name, company_name, client address, company address)"
 3 TO0O000008 ODOOOOOOD1 3,constant_text
 VA,constant_text
 Pepco,company_name
 Your electic bill,constant_text
-17-Jul,bill_date
+Jul-17,bill_date
 To the period,constant_text
 "June 6, 2017 to July 6, 2017",bill_date_range
 An Exelon Company,constant_text
