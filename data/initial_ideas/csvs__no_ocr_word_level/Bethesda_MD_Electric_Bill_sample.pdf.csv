@@ -1,4 +1,4 @@
-filename,page,block,line,word,text,Unknown Character,Unknown Digit,variable,Name,Address,date,year,price,acct_#,int_usage,misc_phrase,text_type
+filename,page,block,line,word,text,unknown_character,unknown_digit,variable,name,address,date,year,price,account_number,int_usage,misc_phrase,text_type
 Bethesda_MD_Electric_Bill_sample,1,4,1,1,An,,,,,,,,,,,,Intro
 Bethesda_MD_Electric_Bill_sample,1,4,1,2,Exelon,,,,,,,,,,,,Intro
 Bethesda_MD_Electric_Bill_sample,1,4,1,3,Company,,,,,,,,,,,,Intro
@@ -354,7 +354,7 @@ Bethesda_MD_Electric_Bill_sample,1,31,4,3,ST,,,X,,X,,,,,,,Variable
 Bethesda_MD_Electric_Bill_sample,1,31,5,1,BETHESDA,,,X,,X,,,,,,,Variable
 Bethesda_MD_Electric_Bill_sample,1,31,5,2,MD,,,X,,X,,,,,,,Variable
 Bethesda_MD_Electric_Bill_sample,1,31,5,3,20814,,,X,,X,,,,,,,Variable
-Bethesda_MD_Electric_Bill_sample,1,32,1,1,7.00002E+59,,,,,,,,,,,,Unknown
+Bethesda_MD_Electric_Bill_sample,1,32,1,1,7.00E+59,,,,,,,,,,,,Unknown
 Bethesda_MD_Electric_Bill_sample,2,1,1,1,   ,X,,,,,,,,,,,Unknown
 Bethesda_MD_Electric_Bill_sample,2,1,2,1,   ,X,,,,,,,,,,,Unknown
 Bethesda_MD_Electric_Bill_sample,2,1,3,1,    ,X,,,,,,,,,,,Unknown
