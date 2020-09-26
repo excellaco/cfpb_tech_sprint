@@ -83,46 +83,78 @@ class GenerateBillData:
                     int_usage_flag = row["int_usage"]
                     misc_phrase_flag = row["misc_phrase"]
                     text_type = row["text_type"]
+                    
+                    if (index_number == 0 and text_type != 'Variable'):
+                        concat_sentence = text
 
                     if (text_type == current_text_type and text_type != 'Variable'):
                         concat_sentence = concat_sentence + " " + text
                     else:
                         if (current_text_type == 'AccountNumberText'):
                             self.constant_account_number_text.append(concat_sentence.lstrip())
+                            concat_sentence = ''
+                            current_text_type = ''
                         elif (current_text_type == 'AddressText'):
                             self.constant_address_text.append(concat_sentence.lstrip())
+                            concat_sentence = ''
+                            current_text_type = ''
                         elif (current_text_type == 'AddressText'):
                             self.constant_address_text.append(concat_sentence.lstrip())
+                            concat_sentence = ''
+                            current_text_type = ''
                         elif (current_text_type == 'BillHeader'):
                             self.constant_bill_header_text.append(concat_sentence.lstrip())
+                            concat_sentence = ''
+                            current_text_type = ''
                         elif (current_text_type == 'ConcatText'):
                             self.constant_concat_text.append(concat_sentence.lstrip())
+                            concat_sentence = ''
+                            current_text_type = ''
                         elif (current_text_type == 'DateText'):
                             self.constant_date_text.append(concat_sentence.lstrip())
+                            concat_sentence = ''
+                            current_text_type = ''
                         elif (current_text_type == 'GeneralText'):
                             self.constant_general_text.append(concat_sentence.lstrip())
+                            concat_sentence = ''
+                            current_text_type = ''
                         elif (current_text_type == 'HeaderText'):
                             self.constant_header_text.append(concat_sentence.lstrip())
+                            concat_sentence = ''
+                            current_text_type = ''
                         elif (current_text_type == 'Intro'):
                             self.constant_intro_text.append(concat_sentence.lstrip())
+                            concat_sentence = ''
+                            current_text_type = ''
                         elif (current_text_type == 'IntUsageText'):
                             self.constant_int_usage_text.append(concat_sentence.lstrip())
+                            concat_sentence = ''
+                            current_text_type = ''
                         elif (current_text_type == 'MiscPhraseText'):
                             self.constant_misc_phrase_text.append(concat_sentence.lstrip())
+                            concat_sentence = ''
+                            current_text_type = ''
                         elif (current_text_type == 'PageHeader'):
                             self.constant_page_header_text.append(concat_sentence.lstrip())
+                            concat_sentence = ''
+                            current_text_type = ''
                         elif (current_text_type == 'PriceText'):
                             self.constant_price_text.append(concat_sentence.lstrip())
+                            concat_sentence = ''
+                            current_text_type = ''
                         elif (current_text_type == 'RangeText'):
                             self.constant_range_text.append(concat_sentence.lstrip())
+                            concat_sentence = ''
+                            current_text_type = ''
                         else:
                             self.unknown_text.append(concat_sentence.lstrip())
-                            
+                            concat_sentence = ''
+                            current_text_type = ''                        
                     
                     # Needed to properly loop through logic up top.
                     if (text_type != 'Variable'):
                         current_text_type = text_type
-                    else:
+                    elif (text_type == 'Variable'):
                         concat_sentence = ''
                         current_text_type = ''
 
@@ -141,7 +173,7 @@ class GenerateBillData:
         self.constant_range_text = list(set(self.constant_range_text))
         self.unknown_text = list(set(self.unknown_text))
 
-        #print(self.constant_concat_text)
+        #print(self.constant_bill_header_text)
 
     # Blueprint for how we will generate a bill. Returns a list of values that contains line types.
     def retrieve_bill_format(self):
