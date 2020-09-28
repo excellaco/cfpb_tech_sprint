@@ -407,5 +407,5 @@ class GenerateBillData:
 
         for _ in range(self.n_documents_generated):
             self.retrieve_bill_format_and_generate_bill()
-            
+
         print(self.constant_general_text)
