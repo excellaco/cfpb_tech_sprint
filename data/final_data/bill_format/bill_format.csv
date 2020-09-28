@@ -4,7 +4,8 @@ PageHeader,unknown_text
 PageHeader,unknown_text
 BillHeader,date_text
 RangeText,date_range_text
-InsertNewLines,name_text
+InsertNewLines,insert_new_lines
+NameText,name_text
 AccountNumberText,account_number_text
 AddressText,client_address_text
 DateText,date_text
@@ -24,7 +25,7 @@ PriceText,price_text
 PriceText,price_text
 HeaderText,name_text_or_address_text
 HeaderText,name_text_or_address_text
-UnknownText,name_text
+NameText,name_text
 AccountNumberText,account_number_text
 RangeText,date_range_text
 GeneralText,insert_new_lines

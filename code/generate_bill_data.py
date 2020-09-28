@@ -32,12 +32,13 @@ class GenerateBillData:
         self.constant_intro_text = []
         self.constant_int_usage_text = []
         self.constant_misc_phrase_text = []
+        self.constant_name_text = []
         self.constant_page_header_text = []
         self.constant_price_text = []
         self.constant_range_text = []
         self.unknown_text = []
         self.misc_phrase_text = ["16F to 18F", "29F to 35F", "99C to 25C", "70C to 14C"]
-        self.n_documents_generated = 1000
+        self.n_documents_generated = 1
 
         self.csv_path = os.getenv(
             "CSV_PATH", "../data/final_data/csvs_for_loading_data/"
@@ -173,6 +174,10 @@ class GenerateBillData:
                             )
                             concat_sentence = ""
                             current_text_type = ""
+                        elif current_text_type == "NameText":
+                            self.constant_name_text.append(concat_sentence.lstrip())
+                            concat_sentence = ""
+                            current_text_type = ""
                         elif current_text_type == "PageHeader":
                             self.constant_page_header_text.append(
                                 concat_sentence.lstrip()
@@ -295,6 +300,12 @@ class GenerateBillData:
                         generated_bill_text = (
                             generated_bill_text
                             + random.choice(self.constant_misc_phrase_text)
+                            + self.new_line_2
+                        )
+                    elif bill_format == "NameText":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_name_text)
                             + self.new_line_2
                         )
                     elif bill_format == "PageHeader":
