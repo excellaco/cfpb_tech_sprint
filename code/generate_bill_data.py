@@ -43,20 +43,20 @@ class GenerateBillData:
         self.bill_format_csv_path = os.getenv(
             "BILL_FORMAT_PATH", "../data/final_data/bill_format/"
         )
-        
+
         self.write_bills_path = os.getenv(
             "WRITE_BILLS_PATH", "../data/final_data/bills/"
         )
-        
+
         self.fake = Faker()
 
     # This is for generating an account number
     def generate_account_number(self):
-        random_number = str(random.randint(100000000,999999999))
-        
-        random_number = random_number[:1] + '-' + random_number[1:]
-        random_number = random_number[:6] + '-' + random_number[6:]
-        
+        random_number = str(random.randint(100000000, 999999999))
+
+        random_number = random_number[:1] + "-" + random_number[1:]
+        random_number = random_number[:6] + "-" + random_number[6:]
+
         return random_number
 
     def generate_name(self):
@@ -95,82 +95,92 @@ class GenerateBillData:
                     int_usage_flag = row["int_usage"]
                     misc_phrase_flag = row["misc_phrase"]
                     text_type = row["text_type"]
-                    
+
                     # For beginning of process. Do not change.
-                    if (index_number == 0 and text_type != 'Variable'):
+                    if index_number == 0 and text_type != "Variable":
                         concat_sentence = text
 
-                    if (text_type == current_text_type and text_type != 'Variable'):
+                    if text_type == current_text_type and text_type != "Variable":
                         concat_sentence = concat_sentence + " " + text
-                    elif (text_type == 'ConcatText'):
+                    elif text_type == "ConcatText":
                         concat_sentence = text
                         self.constant_concat_text.append(concat_sentence.lstrip())
-                        concat_sentence = ''
-                        current_text_type = ''
+                        concat_sentence = ""
+                        current_text_type = ""
                     else:
-                        if (current_text_type == 'AccountNumberText'):
-                            self.constant_account_number_text.append(concat_sentence.lstrip())
-                            concat_sentence = ''
-                            current_text_type = ''
-                        elif (current_text_type == 'AddressText'):
+                        if current_text_type == "AccountNumberText":
+                            self.constant_account_number_text.append(
+                                concat_sentence.lstrip()
+                            )
+                            concat_sentence = ""
+                            current_text_type = ""
+                        elif current_text_type == "AddressText":
                             self.constant_address_text.append(concat_sentence.lstrip())
-                            concat_sentence = ''
-                            current_text_type = ''
-                        elif (current_text_type == 'AddressText'):
+                            concat_sentence = ""
+                            current_text_type = ""
+                        elif current_text_type == "AddressText":
                             self.constant_address_text.append(concat_sentence.lstrip())
-                            concat_sentence = ''
-                            current_text_type = ''
-                        elif (current_text_type == 'BillHeader'):
-                            self.constant_bill_header_text.append(concat_sentence.lstrip())
-                            concat_sentence = ''
-                            current_text_type = ''
-                        elif (current_text_type == 'DateText'):
+                            concat_sentence = ""
+                            current_text_type = ""
+                        elif current_text_type == "BillHeader":
+                            self.constant_bill_header_text.append(
+                                concat_sentence.lstrip()
+                            )
+                            concat_sentence = ""
+                            current_text_type = ""
+                        elif current_text_type == "DateText":
                             self.constant_date_text.append(concat_sentence.lstrip())
-                            concat_sentence = ''
-                            current_text_type = ''
-                        elif (current_text_type == 'GeneralText'):
+                            concat_sentence = ""
+                            current_text_type = ""
+                        elif current_text_type == "GeneralText":
                             self.constant_general_text.append(concat_sentence.lstrip())
-                            concat_sentence = ''
-                            current_text_type = ''
-                        elif (current_text_type == 'HeaderText'):
+                            concat_sentence = ""
+                            current_text_type = ""
+                        elif current_text_type == "HeaderText":
                             self.constant_header_text.append(concat_sentence.lstrip())
-                            concat_sentence = ''
-                            current_text_type = ''
-                        elif (current_text_type == 'Intro'):
+                            concat_sentence = ""
+                            current_text_type = ""
+                        elif current_text_type == "Intro":
                             self.constant_intro_text.append(concat_sentence.lstrip())
-                            concat_sentence = ''
-                            current_text_type = ''
-                        elif (current_text_type == 'IntUsageText'):
-                            self.constant_int_usage_text.append(concat_sentence.lstrip())
-                            concat_sentence = ''
-                            current_text_type = ''
-                        elif (current_text_type == 'MiscPhraseText'):
-                            self.constant_misc_phrase_text.append(concat_sentence.lstrip())
-                            concat_sentence = ''
-                            current_text_type = ''
-                        elif (current_text_type == 'PageHeader'):
-                            self.constant_page_header_text.append(concat_sentence.lstrip())
-                            concat_sentence = ''
-                            current_text_type = ''
-                        elif (current_text_type == 'PriceText'):
+                            concat_sentence = ""
+                            current_text_type = ""
+                        elif current_text_type == "IntUsageText":
+                            self.constant_int_usage_text.append(
+                                concat_sentence.lstrip()
+                            )
+                            concat_sentence = ""
+                            current_text_type = ""
+                        elif current_text_type == "MiscPhraseText":
+                            self.constant_misc_phrase_text.append(
+                                concat_sentence.lstrip()
+                            )
+                            concat_sentence = ""
+                            current_text_type = ""
+                        elif current_text_type == "PageHeader":
+                            self.constant_page_header_text.append(
+                                concat_sentence.lstrip()
+                            )
+                            concat_sentence = ""
+                            current_text_type = ""
+                        elif current_text_type == "PriceText":
                             self.constant_price_text.append(concat_sentence.lstrip())
-                            concat_sentence = ''
-                            current_text_type = ''
-                        elif (current_text_type == 'RangeText'):
+                            concat_sentence = ""
+                            current_text_type = ""
+                        elif current_text_type == "RangeText":
                             self.constant_range_text.append(concat_sentence.lstrip())
-                            concat_sentence = ''
-                            current_text_type = ''
+                            concat_sentence = ""
+                            current_text_type = ""
                         else:
                             self.unknown_text.append(concat_sentence.lstrip())
-                            concat_sentence = ''
-                            current_text_type = ''                   
-                    
+                            concat_sentence = ""
+                            current_text_type = ""
+
                     # Needed to properly loop through logic up top.
-                    if (text_type != 'Variable'):
+                    if text_type != "Variable":
                         current_text_type = text_type
-                    elif (text_type == 'Variable'):
-                        concat_sentence = ''
-                        current_text_type = ''
+                    elif text_type == "Variable":
+                        concat_sentence = ""
+                        current_text_type = ""
 
         # Distinct out lists.
         self.constant_account_number_text = list(set(self.constant_account_number_text))
@@ -187,12 +197,12 @@ class GenerateBillData:
         self.constant_range_text = list(set(self.constant_range_text))
         self.unknown_text = list(set(self.unknown_text))
 
-        #print(self.constant_bill_header_text)
+        # print(self.constant_bill_header_text)
 
     # Blueprint for how we will generate a bill. Returns a list of values that contains line types.
     def retrieve_bill_format_and_generate_bill(self):
-        
-        generated_bill_text = ''
+
+        generated_bill_text = ""
         random_account_number = self.generate_account_number()
         random_name = self.generate_name()
         random_client_address = self.generate_address()
@@ -200,7 +210,7 @@ class GenerateBillData:
         random_name_address = [random_name, random_client_address]
         file_name_for_generation = random_name + "-" + random_account_number
         file_name_for_generation = file_name_for_generation.replace(" ", "_")
-        
+
         for file_name in os.listdir(self.bill_format_csv_path):
             if file_name.endswith(".csv"):
                 file_path = self.bill_format_csv_path + file_name
@@ -212,79 +222,151 @@ class GenerateBillData:
                     index_number = index
                     bill_format = row["bill_format"]
                     variable_after = row["variable_after"]
-                    
+
                     # Bill Format
-                    if (bill_format == 'AccountNumberText'):
-                        generated_bill_text = generated_bill_text + random.choice(self.constant_account_number_text) + self.new_line_2
-                    elif (bill_format == 'AddressText'):
-                        generated_bill_text = generated_bill_text + random.choice(self.constant_address_text) + self.new_line_2
-                    elif (bill_format == 'BillHeader'):
-                        generated_bill_text = generated_bill_text + random.choice(self.constant_bill_header_text) + self.new_line_2
-                    elif (bill_format == 'DateText'):
-                        generated_bill_text = generated_bill_text + random.choice(self.constant_date_text) + self.new_line_2
-                    elif (bill_format == 'GeneralText'):
-                        generated_bill_text = generated_bill_text + random.choice(self.constant_general_text) + self.new_line_2
-                    elif (bill_format == 'HeaderText'):
-                        generated_bill_text = generated_bill_text + random.choice(self.constant_header_text) + self.new_line_2
-                    elif (bill_format == 'InsertNewLines'):
+                    if bill_format == "AccountNumberText":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_account_number_text)
+                            + self.new_line_2
+                        )
+                    elif bill_format == "AddressText":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_address_text)
+                            + self.new_line_2
+                        )
+                    elif bill_format == "BillHeader":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_bill_header_text)
+                            + self.new_line_2
+                        )
+                    elif bill_format == "DateText":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_date_text)
+                            + self.new_line_2
+                        )
+                    elif bill_format == "GeneralText":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_general_text)
+                            + self.new_line_2
+                        )
+                    elif bill_format == "HeaderText":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_header_text)
+                            + self.new_line_2
+                        )
+                    elif bill_format == "InsertNewLines":
                         generated_bill_text = generated_bill_text + self.new_line_2
-                    elif (bill_format == 'Intro'):
-                        generated_bill_text = generated_bill_text + random.choice(self.constant_intro_text) + self.new_line_2
-                    elif (bill_format == 'IntUsageText'):
-                        generated_bill_text = generated_bill_text + random.choice(self.constant_int_usage_text) + self.new_line_2
-                    elif (bill_format == 'MiscPhraseText'):
-                        generated_bill_text = generated_bill_text + random.choice(self.constant_misc_phrase_text) + self.new_line_2
-                    elif (bill_format == 'PageHeader'):
-                        generated_bill_text = generated_bill_text + random.choice(self.constant_page_header_text) + self.new_line_2
-                    elif (bill_format == 'PriceText'):
-                        generated_bill_text = generated_bill_text + random.choice(self.constant_price_text) + self.new_line_2
-                    elif (bill_format == 'RangeText'):
-                        generated_bill_text = generated_bill_text + random.choice(self.constant_range_text) + self.new_line_2
-                    elif (bill_format == 'UnknownText'):
-                        generated_bill_text = generated_bill_text + random.choice(self.unknown_text) + self.new_line_2
-                    
+                    elif bill_format == "Intro":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_intro_text)
+                            + self.new_line_2
+                        )
+                    elif bill_format == "IntUsageText":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_int_usage_text)
+                            + self.new_line_2
+                        )
+                    elif bill_format == "MiscPhraseText":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_misc_phrase_text)
+                            + self.new_line_2
+                        )
+                    elif bill_format == "PageHeader":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_page_header_text)
+                            + self.new_line_2
+                        )
+                    elif bill_format == "PriceText":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_price_text)
+                            + self.new_line_2
+                        )
+                    elif bill_format == "RangeText":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_range_text)
+                            + self.new_line_2
+                        )
+                    elif bill_format == "UnknownText":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.unknown_text)
+                            + self.new_line_2
+                        )
+
                     # Variable After
-                    if (variable_after == 'account_number_text'):
-                        generated_bill_text = generated_bill_text + random_account_number + self.new_line_2
-                    elif (variable_after == 'client_address_text'):
-                        generated_bill_text = generated_bill_text + random_client_address + self.new_line_2
-                    elif (variable_after == 'date_range_text'):
+                    if variable_after == "account_number_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random_account_number
+                            + self.new_line_2
+                        )
+                    elif variable_after == "client_address_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random_client_address
+                            + self.new_line_2
+                        )
+                    elif variable_after == "date_range_text":
                         pass
-                        #generated_bill_text = generated_bill_text + generate_random_date_range_text() + self.new_line_2
-                    elif (variable_after == 'date_text'):
+                        # generated_bill_text = generated_bill_text + generate_random_date_range_text() + self.new_line_2
+                    elif variable_after == "date_text":
                         pass
-                        #generated_bill_text = generated_bill_text + generate_random_date_text() + self.new_line_2
-                    elif (variable_after == 'insert_new_lines'):
+                        # generated_bill_text = generated_bill_text + generate_random_date_text() + self.new_line_2
+                    elif variable_after == "insert_new_lines":
                         generated_bill_text = generated_bill_text + self.new_line_2
-                    elif (variable_after == 'int_usage'):
+                    elif variable_after == "int_usage":
                         pass
-                        #generated_bill_text = generated_bill_text + generate_random_int_usage() + self.new_line_2
-                    elif (variable_after == 'misc_phrase_text'):
+                        # generated_bill_text = generated_bill_text + generate_random_int_usage() + self.new_line_2
+                    elif variable_after == "misc_phrase_text":
                         pass
-                        #generated_bill_text = generated_bill_text + generate_random_misc_text() + self.new_line_2
-                    elif (variable_after == 'name_text'):
-                        generated_bill_text = generated_bill_text + random_name + self.new_line_2
-                    elif (variable_after == 'name_text_or_address_text'):
-                        generated_bill_text = generated_bill_text + random.choice(random_name_address) + self.new_line_2
-                    elif (variable_after == 'price_text'):
+                        # generated_bill_text = generated_bill_text + generate_random_misc_text() + self.new_line_2
+                    elif variable_after == "name_text":
+                        generated_bill_text = (
+                            generated_bill_text + random_name + self.new_line_2
+                        )
+                    elif variable_after == "name_text_or_address_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(random_name_address)
+                            + self.new_line_2
+                        )
+                    elif variable_after == "price_text":
                         pass
-                        #generated_bill_text = generated_bill_text + generate_random_price() + self.new_line_2
-                    elif (variable_after == 'service_address_text'):
-                        generated_bill_text = generated_bill_text + random_service_address + self.new_line_2
-                    elif (variable_after == 'unknown_text'):
-                        generated_bill_text = generated_bill_text + random.choice(self.unknown_text) + self.new_line_2
-        
-        #print(generated_bill_text)  
-        
+                        # generated_bill_text = generated_bill_text + generate_random_price() + self.new_line_2
+                    elif variable_after == "service_address_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random_service_address
+                            + self.new_line_2
+                        )
+                    elif variable_after == "unknown_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.unknown_text)
+                            + self.new_line_2
+                        )
+
+        # print(generated_bill_text)
+
         with open(self.write_bills_path + file_name_for_generation + ".txt", "w+") as f:
-            f.write(generated_bill_text)      
+            f.write(generated_bill_text)
 
     def execute_pipeline(self):
         self.read_csvs_and_populate_constant_text()
-        
-        
-        for _ in range(self.n_documents_generated): 
+
+        for _ in range(self.n_documents_generated):
             self.retrieve_bill_format_and_generate_bill()
 
-            #self.generate_account_number()
-
+            # self.generate_account_number()
