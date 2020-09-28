@@ -90,11 +90,11 @@ class GenerateBillData:
         self.constant_general_text.append("Specific related company information.")
 
         for _ in range(self.n_sentences):
-            self.constant_general_text.append(fake.sentence())
+            self.constant_general_text.append(self.fake.sentence())
 
         # Misc Phrase Text
         for _ in range(self.n_sentences):
-            self.misc_phrase_text.append(fake.sentence())
+            self.misc_phrase_text.append(self.fake.sentence())
 
     def read_csvs_and_populate_constant_text(self):
         for file_name in os.listdir(self.csv_path):
@@ -110,21 +110,7 @@ class GenerateBillData:
 
                     index_number = index
                     file_name = row["filename"]
-                    page = row["page"]
-                    block = row["block"]
-                    line = row["line"]
-                    word = row["word"]
-                    text = row["text"]
-                    unknown_character_flag = row["unknown_character"]
-                    unknown_digit_flag = row["unknown_digit"]
-                    name_flag = row["name"]
-                    address_flag = row["address"]
-                    date_flag = row["date"]
-                    year_flag = row["year"]
-                    price_flag = row["price"]
-                    account_number_flag = row["account_number"]
-                    int_usage_flag = row["int_usage"]
-                    misc_phrase_flag = row["misc_phrase"]
+                    text = str(row["text"])
                     text_type = row["text_type"]
 
                     # For beginning of process. Do not change.
@@ -421,3 +407,5 @@ class GenerateBillData:
 
         for _ in range(self.n_documents_generated):
             self.retrieve_bill_format_and_generate_bill()
+            
+        print(self.constant_general_text)
