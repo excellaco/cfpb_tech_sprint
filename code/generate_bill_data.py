@@ -39,6 +39,7 @@ class GenerateBillData:
         self.unknown_text = []
         self.misc_phrase_text = ["16F to 18F", "29F to 35F", "99C to 25C", "70C to 14C"]
         self.n_documents_generated = 1
+        self.n_sentences = 100
 
         self.csv_path = os.getenv(
             "CSV_PATH", "../data/final_data/csvs_for_loading_data/"
@@ -87,70 +88,13 @@ class GenerateBillData:
 
         # General Text
         self.constant_general_text.append("Specific related company information.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
-        self.constant_general_text.append("Messages from the CEO.")
+
+        for _ in range(self.n_sentences):
+            self.constant_general_text.append(fake.sentence())
 
         # Misc Phrase Text
-        self.misc_phrase_text.append("16F to 18F")
-        self.misc_phrase_text.append("29F to 35F")
-        self.misc_phrase_text.append("99C to 25C")
-        self.misc_phrase_text.append("70C to 14C")
+        for _ in range(self.n_sentences):
+            self.misc_phrase_text.append(fake.sentence())
 
     def read_csvs_and_populate_constant_text(self):
         for file_name in os.listdir(self.csv_path):
