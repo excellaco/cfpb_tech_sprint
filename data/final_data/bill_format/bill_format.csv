@@ -6,7 +6,7 @@ BillHeader,date_text
 RangeText,date_range_text
 InsertNewLines,name_text
 AccountNumberText,account_number_text
-AddressText,address_text
+AddressText,client_address_text
 DateText,date_text
 PriceText,price_text
 PriceText,price_text
@@ -22,15 +22,15 @@ GeneralText,insert_new_lines
 AccountNumberText,account_number_text
 PriceText,price_text
 PriceText,price_text
-HeaderText,name_text or address_text
-HeaderText,name_text or address_text
+HeaderText,name_text_or_address_text
+HeaderText,name_text_or_address_text
 UnknownText,name_text
 AccountNumberText,account_number_text
 RangeText,date_range_text
 GeneralText,insert_new_lines
 GeneralText,insert_new_lines
 DateText,date_text
-GeneralText,insert_new_lines
+GeneralText,service_address_text
 IntUsageText,int_usage
 IntUsageText,int_usage
 IntUsageText,int_usage
@@ -52,4 +52,4 @@ DateText,date_text
 GeneralText,insert_new_lines
 InsertNewLines,name_text
 AccountNumberText,account_number_text
-AddressText,address_text
+AddressText,client_address_text

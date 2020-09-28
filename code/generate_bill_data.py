@@ -42,6 +42,8 @@ class GenerateBillData:
         self.bill_format_csv_path = os.getenv(
             "BILL_FORMAT_PATH", "../data/final_data/bill_format/"
         )
+        
+        self.fake = Faker()
 
     # This is for generating an account number
     def generate_account_number(self):
@@ -53,10 +55,10 @@ class GenerateBillData:
         return random_number
 
     def generate_name(self):
-        return fake.name()
+        return self.fake.name()
 
     def generate_address(self):
-        return fake.address()
+        return self.fake.address()
 
     def read_csvs_and_populate_constant_text(self):
         for file_name in os.listdir(self.csv_path):
@@ -187,6 +189,10 @@ class GenerateBillData:
         
         generated_bill_text = ''
         random_account_number = self.generate_account_number()
+        random_name = self.generate_name()
+        random_client_address = self.generate_address()
+        random_service_address = self.generate_address()
+        random_name_address = [random_name, random_client_address]
         
         for file_name in os.listdir(self.bill_format_csv_path):
             if file_name.endswith(".csv"):
@@ -233,26 +239,33 @@ class GenerateBillData:
                     # Variable After
                     if (variable_after == 'account_number_text'):
                         generated_bill_text = generated_bill_text + random_account_number + self.new_line_2
-                    elif (variable_after == ''):
-                        generated_bill_text = generated_bill_text + random_account_number + self.new_line_2
-                    elif (variable_after == ''):
-                        generated_bill_text = generated_bill_text + random_account_number + self.new_line_2
-                    elif (variable_after == ''):
-                        generated_bill_text = generated_bill_text + random_account_number + self.new_line_2
-                    elif (variable_after == ''):
-                        generated_bill_text = generated_bill_text + random_account_number + self.new_line_2
-                    elif (variable_after == ''):
-                        generated_bill_text = generated_bill_text + random_account_number + self.new_line_2
-                    elif (variable_after == ''):
-                        generated_bill_text = generated_bill_text + random_account_number + self.new_line_2
-                    elif (variable_after == ''):
-                        generated_bill_text = generated_bill_text + random_account_number + self.new_line_2
-                    elif (variable_after == ''):
-                        generated_bill_text = generated_bill_text + random_account_number + self.new_line_2
-                    elif (variable_after == ''):
-                        generated_bill_text = generated_bill_text + random_account_number + self.new_line_2
-                    elif (variable_after == ''):
-                        generated_bill_text = generated_bill_text + random_account_number + self.new_line_2
+                    elif (variable_after == 'client_address_text'):
+                        generated_bill_text = generated_bill_text + random_client_address + self.new_line_2
+                    elif (variable_after == 'date_range_text'):
+                        pass
+                        #generated_bill_text = generated_bill_text + generate_random_date_range_text() + self.new_line_2
+                    elif (variable_after == 'date_text'):
+                        pass
+                        #generated_bill_text = generated_bill_text + generate_random_date_text() + self.new_line_2
+                    elif (variable_after == 'insert_new_lines'):
+                        generated_bill_text = generated_bill_text + self.new_line_2
+                    elif (variable_after == 'int_usage'):
+                        pass
+                        #generated_bill_text = generated_bill_text + generate_random_int_usage() + self.new_line_2
+                    elif (variable_after == 'misc_phrase_text'):
+                        pass
+                        #generated_bill_text = generated_bill_text + generate_random_misc_text() + self.new_line_2
+                    elif (variable_after == 'name_text'):
+                        generated_bill_text = generated_bill_text + random_name + self.new_line_2
+                    elif (variable_after == 'name_text_or_address_text'):
+                        generated_bill_text = generated_bill_text + random.choice(random_name_address) + self.new_line_2
+                    elif (variable_after == 'price_text'):
+                        pass
+                        #generated_bill_text = generated_bill_text + generate_random_price() + self.new_line_2
+                    elif (variable_after == 'service_address_text'):
+                        generated_bill_text = generated_bill_text + random_service_address + self.new_line_2
+                    elif (variable_after == 'unknown_text'):
+                        generated_bill_text = generated_bill_text + random.choice(self.unknown_text) + self.new_line_2
         
         print(generated_bill_text)       
 
