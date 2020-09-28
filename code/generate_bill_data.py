@@ -417,9 +417,7 @@ class GenerateBillData:
 
     def execute_pipeline(self):
         self.read_csvs_and_populate_constant_text()
-        # self.populate_static_data()
+        self.populate_static_data()
 
         for _ in range(self.n_documents_generated):
             self.retrieve_bill_format_and_generate_bill()
-
-            # self.generate_account_number()
