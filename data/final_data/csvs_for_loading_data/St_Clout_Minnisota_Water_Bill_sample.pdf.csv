@@ -1,0 +1,182 @@
+filename,page,block,line,word,text,?,variable,first name,last name,street number,street name,city,state,zip,date,price,acct_#,int_usage,text_type
+St_Clout_Minnisota_Water_Bill_sample,1,1,1,1,101156294,,,,,,,,,,,,,,Unknown
+St_Clout_Minnisota_Water_Bill_sample,1,2,1,1,White|Simplex,,,,,,,,,,,,,,Unknown
+St_Clout_Minnisota_Water_Bill_sample,1,3,1,1,1,,,,,,,,,,,,,,Unknown
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,1,On,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,2,July,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,3,1st,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,4,any,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,5,unpaid,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,6,amounts,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,7,more,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,8,than,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,9,30,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,10,days,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,11,past,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,12,due,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,13,will,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,14,be,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,15,certified,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,16,to,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,17,the,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,1,18,County,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,2,1,Auditor,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,2,2,for,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,2,3,collection,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,2,4,and,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,2,5,assessed,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,2,6,an,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,2,7,additional,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,2,8,$50 ,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,4,2,9,fee.,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,5,1,1,Customer,,x,x,,,,,,,,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,5,1,2,Name,,x,,x,,,,,,,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,5,2,1,Customer,,x,,,x,,,,,,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,5,2,2,billing,,x,,,,x,,,,,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,5,2,3,Address,,x,,,,x,,,,,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,5,3,1,City,,x,,,,,x,,,,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,5,3,2,State,,x,,,,,,x,,,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,5,3,3,Zip,,x,,,,,,,x,,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,5,4,1,TADAADDADFAFFFAAADAATDADFDTATAAADAFTTFFDTFFATDDTATTDADATTADTATFTT,,,,,,,,,,,,,,Unknown
+St_Clout_Minnisota_Water_Bill_sample,1,6,1,1,2.27E+11,,,,,,,,,,,,,,PageHeader
+St_Clout_Minnisota_Water_Bill_sample,1,7,1,1,Previous,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,7,1,2,Balance,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,7,2,1,$119.93 ,,x,,,,,,,,,x,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,7,3,1,Payments,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,7,3,2,Received,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,7,4,1,$119.93 ,,x,,,,,,,,,x,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,7,5,1,Adjustments,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,7,6,1,$0.00 ,,x,,,,,,,,,x,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,7,7,1,Late,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,7,7,2,Fees,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,7,8,1,$0.00 ,,x,,,,,,,,,x,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,7,9,1,Your,,,,,,,,,,,,,,DateText
+St_Clout_Minnisota_Water_Bill_sample,1,7,9,2,Account,,,,,,,,,,,,,,DateText
+St_Clout_Minnisota_Water_Bill_sample,1,7,9,3,Balance,,,,,,,,,,,,,,DateText
+St_Clout_Minnisota_Water_Bill_sample,1,7,9,4,on,,,,,,,,,,,,,,DateText
+St_Clout_Minnisota_Water_Bill_sample,1,7,9,5,2/2/17,,x,,,,,,,,x,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,7,10,1,$0.00 ,,x,,,,,,,,,x,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,7,11,1,Current,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,7,11,2,Bill,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,7,12,1,$73.34 ,,x,,,,,,,,,x,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,8,1,1,Total,,,,,,,,,,,,,,DateText
+St_Clout_Minnisota_Water_Bill_sample,1,8,1,2,Amount,,,,,,,,,,,,,,DateText
+St_Clout_Minnisota_Water_Bill_sample,1,8,1,3,Due,,,,,,,,,,,,,,DateText
+St_Clout_Minnisota_Water_Bill_sample,1,8,1,4,by,,,,,,,,,,,,,,DateText
+St_Clout_Minnisota_Water_Bill_sample,1,8,1,5,2/28/17,,x,,,,,,,,x,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,8,2,1,$73.34 ,,x,,,,,,,,,x,x,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,9,1,1,#######,,,,,,,,,,,,x,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,9,2,1,#######,,,,,,,,,,,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,9,3,1,LAST,,,,,,,,,,,,,,DateText
+St_Clout_Minnisota_Water_Bill_sample,1,9,3,2,Business,,,,,,,,,,,,,,DateText
+St_Clout_Minnisota_Water_Bill_sample,1,9,3,3,Day,,,,,,,,,,,,,,DateText
+St_Clout_Minnisota_Water_Bill_sample,1,10,1,1,BI-MONTHLY,,,,,,,,,,,,,,DateText
+St_Clout_Minnisota_Water_Bill_sample,1,10,2,1,$0.00 ,,x,,,,,,,,,x,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,10,3,1,$,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,11,1,1,1234,,,,,,,,,,,,,,AddressText
+St_Clout_Minnisota_Water_Bill_sample,1,11,1,2,Street,,x,,,,x,,,,,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,11,1,3,SE,,x,,,,x,,,,,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,11,2,1,1-877-729-2497,,x,,,,,,,,,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,12,1,1,#######,,x,,,,,,,,,,x,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,12,2,1,#######,,x,,,,,,,,,,x,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,12,3,1,##-#######,,x,,,,,,,,,,x,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,12,4,1,11/2/16,,x,,,,,,,,x,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,12,4,2,-,,,,,,,,,,,,,,RangeText
+St_Clout_Minnisota_Water_Bill_sample,1,12,4,3,1/4/17,,x,,,,,,,,x,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,13,1,1,720,,x,,,,,,,,,,,x,IntUsageText
+St_Clout_Minnisota_Water_Bill_sample,1,13,2,1,730,,x,,,,,,,,,,,x,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,13,3,1,10,,x,,,,,,,,,,,x,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,13,4,1,6,,x,,,,,,,,,,,x,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,13,5,1,$32.30 ,,x,,,,,,,,,,,x,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,13,6,1,$17.58 ,,x,,,,,,,,,x,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,13,7,1,TOTAL,,,,,,,,,,,,,,IntUsageText
+St_Clout_Minnisota_Water_Bill_sample,1,13,7,2,CONSUMPTION,,,,,,,,,,,,,,IntUsageText
+St_Clout_Minnisota_Water_Bill_sample,1,13,8,1,10,,x,,,,,,,,,x,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,13,9,1,$14.60 ,,x,,,,,,,,,,,x,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,13,10,1,NON-TAXABLE,,,,,,,,,,,,,,IntUsageText
+St_Clout_Minnisota_Water_Bill_sample,1,13,11,1,7.3,,x,,,,,,,,,x,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,13,12,1,TAXABLE,,,,,,,,,,,,,,IntUsageText
+St_Clout_Minnisota_Water_Bill_sample,1,13,13,1,7.3,,x,,,,,,,,,,,x,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,14,1,1,$0.71 ,,x,,,,,,,,,,,x,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,14,2,1,$4.80 ,,x,,,,,,,,,x,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,14,3,1,$3.40 ,,x,,,,,,,,,x,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,15,1,1,WATER,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,1,2,CHARGES,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,2,1,SEWER,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,2,2,CHARGES,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,3,1,RECYCLE/PASS-BY,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,3,2,CHAR,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,3,3,GES,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,4,1,SWM,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,4,2,TAX,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,5,1,FED,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,5,2,NPDES,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,5,3,STORMWATER,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,5,4,FEE,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,6,1,STREET,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,6,2,LIGHT,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,6,3,UTILITY,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,6,4,FEE,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,7,1,TOTAL,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,7,2,CURRENT,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,7,3,CHARGE,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,7,4,S,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,15,8,1,$73.34 ,,x,,,,,,,,,x,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,16,1,1,TOTAL,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,16,1,2,WATER,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,16,1,3,CHARGES,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,16,1,4,FOR(,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,16,2,1,10,,x,,,,,,,,,x,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,16,2,2,)CUBIC,,,,,,,,,,,,,,IntUsageText
+St_Clout_Minnisota_Water_Bill_sample,1,16,2,3,UNITS,,,,,,,,,,,,,,IntUsageText
+St_Clout_Minnisota_Water_Bill_sample,1,17,1,1,4,,x,,,,,,,,,,,x,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,17,2,1,(0,,,,,,,,,,,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,17,2,2,-,,,,,,,,,,,,,,IntUsageText
+St_Clout_Minnisota_Water_Bill_sample,1,17,2,3,4,,,,,,,,,,,,,,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,17,2,4,cubic,,,,,,,,,,,,,,IntUsageText
+St_Clout_Minnisota_Water_Bill_sample,1,17,2,5,units,,,,,,,,,,,,,,IntUsageText
+St_Clout_Minnisota_Water_Bill_sample,1,17,2,6,$12.88 ,,x,,,,,,,,,,,x,Variable
+St_Clout_Minnisota_Water_Bill_sample,1,17,2,7,per,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,17,2,8,billing,,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,17,2,9,cycle),,,,,,,,,,,,,,PriceText
+St_Clout_Minnisota_Water_Bill_sample,1,18,1,1,(Over,,,,,,,,,,,,,,IntUsageText
+St_Clout_Minnisota_Water_Bill_sample,1,18,1,2,4,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,18,1,3,cubic,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,18,1,4,units,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,18,1,5,3.23/,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,18,1,6,per,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,18,1,7,cubic,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,18,1,8,unit),,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,18,2,1,6,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,19,1,1,Solid,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,19,1,2,Waste,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,19,1,3,Mgmt,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,19,1,4,Tax,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,19,1,5,assessed,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,19,1,6,on,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,19,1,7,half,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,19,1,8,of,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,19,1,9,the,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,19,1,10,recycling,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,19,1,11,charge,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,1,Watch,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,2,this,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,3,area,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,4,every,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,5,bill,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,6,for,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,7,updated,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,8,news,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,9,and,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,10,messages,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,11,pertaining,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,12,to,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,13,the,,,,,,,,,,,,,,GeneralText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,14,City,,,,,,,,,,,,,,AddressText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,15,of,,,,,,,,,,,,,,AddressText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,16,St,,,,,,,,,,,,,,AddressText
+St_Clout_Minnisota_Water_Bill_sample,1,20,1,17,Cloud,,,,,,,,,,,,,,AddressText
+St_Clout_Minnisota_Water_Bill_sample,1,21,1,1,1234,,,,,,,,,,,,,,AddressText
+St_Clout_Minnisota_Water_Bill_sample,1,21,1,2,Street,,,,,,,,,,,,,,AddressText
+St_Clout_Minnisota_Water_Bill_sample,1,21,1,3,SE,,,,,,,,,,,,,,AddressText
+,,,,,,,,,,,,,,,,x,,,

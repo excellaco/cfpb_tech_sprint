@@ -95,6 +95,23 @@ class GenerateBillData:
         # Misc Phrase Text
         for _ in range(self.n_sentences):
             self.misc_phrase_text.append(self.fake.sentence())
+            
+       	# Intro Text
+       	for _ in range(self.n_sentences):
+            self.constant_intro_text.append('Pepco Company')
+            self.constant_intro_text.append('Verizon Wireless')
+            self.constant_intro_text.append('AT&T')
+            self.constant_intro_text.append('Madison Square Garden')
+            self.constant_intro_text.append('Duke Energy')
+            self.constant_intro_text.append('Comcast')
+            self.constant_intro_text.append('Ohio Power')
+            self.constant_intro_text.append('General Electric')
+            self.constant_intro_text.append('Excella')
+            self.constant_intro_text.append('The Washington Post')
+            self.constant_intro_text.append('New York Times')
+            self.constant_intro_text.append('Amazon')
+            self.constant_intro_text.append('Tesla')
+            self.constant_intro_text.append('Draft Kings')
 
     def read_csvs_and_populate_constant_text(self):
         for file_name in os.listdir(self.csv_path):
