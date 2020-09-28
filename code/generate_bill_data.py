@@ -83,6 +83,75 @@ class GenerateBillData:
         date_range_text = self.generate_date() + " to " + self.generate_date()
         return date_range_text
 
+    def populate_static_data(self):
+
+        # General Text
+        self.constant_general_text.append("Specific related company information.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+        self.constant_general_text.append("Messages from the CEO.")
+
+        # Misc Phrase Text
+        self.misc_phrase_text.append("16F to 18F")
+        self.misc_phrase_text.append("29F to 35F")
+        self.misc_phrase_text.append("99C to 25C")
+        self.misc_phrase_text.append("70C to 14C")
+
     def read_csvs_and_populate_constant_text(self):
         for file_name in os.listdir(self.csv_path):
             if file_name.endswith(".csv"):
@@ -404,6 +473,7 @@ class GenerateBillData:
 
     def execute_pipeline(self):
         self.read_csvs_and_populate_constant_text()
+        # self.populate_static_data()
 
         for _ in range(self.n_documents_generated):
             self.retrieve_bill_format_and_generate_bill()
