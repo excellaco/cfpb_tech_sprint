@@ -4,6 +4,7 @@ from faker import Faker
 import pandas as pd
 import os
 import random
+from datetime import datetime, timedelta
 
 # Bill Generation Process
 # OCR software read bills in and provided a CSV of each bill, separating the lines of the bill into different rows.
@@ -35,7 +36,8 @@ class GenerateBillData:
         self.constant_price_text = []
         self.constant_range_text = []
         self.unknown_text = []
-        self.n_documents_generated = 1
+        self.misc_phrase_text = ["16F to 18F", "29F to 35F", "99C to 25C", "70C to 14C"]
+        self.n_documents_generated = 1000
 
         self.csv_path = os.getenv(
             "CSV_PATH", "../data/final_data/csvs_for_loading_data/"
@@ -49,6 +51,17 @@ class GenerateBillData:
         )
 
         self.fake = Faker()
+
+    def generate_date(self, min_year=2015, max_year=datetime.now().year):
+        # generate a datetime in format yyyy-mm-dd hh:mm:ss.000000
+        start = datetime(min_year, 1, 1, 00, 00, 00)
+        years = max_year - min_year + 1
+        end = start + timedelta(days=365 * years)
+
+        generated_date = str(start + (end - start) * random.random())
+        generated_date = generated_date[:10]
+
+        return generated_date
 
     # This is for generating an account number
     def generate_account_number(self):
@@ -64,6 +77,10 @@ class GenerateBillData:
 
     def generate_address(self):
         return self.fake.address()
+
+    def generate_random_date_range_text(self):
+        date_range_text = self.generate_date() + " to " + self.generate_date()
+        return date_range_text
 
     def read_csvs_and_populate_constant_text(self):
         for file_name in os.listdir(self.csv_path):
@@ -319,19 +336,29 @@ class GenerateBillData:
                             + self.new_line_2
                         )
                     elif variable_after == "date_range_text":
-                        pass
-                        # generated_bill_text = generated_bill_text + generate_random_date_range_text() + self.new_line_2
+                        generated_bill_text = (
+                            generated_bill_text
+                            + self.generate_random_date_range_text()
+                            + self.new_line_2
+                        )
                     elif variable_after == "date_text":
-                        pass
-                        # generated_bill_text = generated_bill_text + generate_random_date_text() + self.new_line_2
+                        generated_bill_text = (
+                            generated_bill_text + self.generate_date() + self.new_line_2
+                        )
                     elif variable_after == "insert_new_lines":
                         generated_bill_text = generated_bill_text + self.new_line_2
                     elif variable_after == "int_usage":
-                        pass
-                        # generated_bill_text = generated_bill_text + generate_random_int_usage() + self.new_line_2
+                        generated_bill_text = (
+                            generated_bill_text
+                            + str(random.randint(1, 9999))
+                            + self.new_line_2
+                        )
                     elif variable_after == "misc_phrase_text":
-                        pass
-                        # generated_bill_text = generated_bill_text + generate_random_misc_text() + self.new_line_2
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.misc_phrase_text)
+                            + self.new_line_2
+                        )
                     elif variable_after == "name_text":
                         generated_bill_text = (
                             generated_bill_text + random_name + self.new_line_2
@@ -343,8 +370,11 @@ class GenerateBillData:
                             + self.new_line_2
                         )
                     elif variable_after == "price_text":
-                        pass
-                        # generated_bill_text = generated_bill_text + generate_random_price() + self.new_line_2
+                        generated_bill_text = (
+                            generated_bill_text
+                            + str(random.uniform(0.00, 99.99))
+                            + self.new_line_2
+                        )
                     elif variable_after == "service_address_text":
                         generated_bill_text = (
                             generated_bill_text
@@ -357,8 +387,6 @@ class GenerateBillData:
                             + random.choice(self.unknown_text)
                             + self.new_line_2
                         )
-
-        # print(generated_bill_text)
 
         with open(self.write_bills_path + file_name_for_generation + ".txt", "w+") as f:
             f.write(generated_bill_text)
