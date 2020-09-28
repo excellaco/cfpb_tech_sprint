@@ -2,8 +2,8 @@ filename,page,block,line,word,text,unknown_character,unknown_digit,variable,name
 Bethesda_MD_Electric_Bill_sample,1,4,1,1,An,,,,,,,,,,,,Intro
 Bethesda_MD_Electric_Bill_sample,1,4,1,2,Exelon,,,,,,,,,,,,Intro
 Bethesda_MD_Electric_Bill_sample,1,4,1,3,Company,,,,,,,,,,,,Intro
-Bethesda_MD_Electric_Bill_sample,1,6,1,1,111•1111,,X,,,,,,,,,,Unknown
-Bethesda_MD_Electric_Bill_sample,1,6,1,2,•111•1•11l1,,X,,,,,,,,,,Unknown
+Bethesda_MD_Electric_Bill_sample,1,6,1,1,111•1111,,X,,,,,,,,,,Variable
+Bethesda_MD_Electric_Bill_sample,1,6,1,2,•111•1•11l1,,X,,,,,,,,,,Variable
 Bethesda_MD_Electric_Bill_sample,1,6,1,3,111,,,,,,,,,,,,PageHeader
 Bethesda_MD_Electric_Bill_sample,1,6,1,4,l11l1••'111•l•'lll'i'l•i''•'illll'l,,X,,,,,,,,,,Unknown
 Bethesda_MD_Electric_Bill_sample,1,6,1,5,•l•l•,X,,,,,,,,,,,Unknown
@@ -34,6 +34,8 @@ Bethesda_MD_Electric_Bill_sample,1,10,2,6,2017,,,X,,,X,,,,,,Variable
 Bethesda_MD_Electric_Bill_sample,1,10,2,8,July,,,X,,,X,,,,,,Variable
 Bethesda_MD_Electric_Bill_sample,1,10,2,9,"6,",,,X,,,X,,,,,,Variable
 Bethesda_MD_Electric_Bill_sample,1,10,2,10,2017,,,X,,,X,,,,,,Variable
+Bethesda_MD_Electric_Bill_sample,1,10,2,10,Customer ,,,X,,,X,,,,,,NameText
+Bethesda_MD_Electric_Bill_sample,1,10,2,10,Name:,,,X,,,X,,,,,,NameText
 Bethesda_MD_Electric_Bill_sample,1,11,1,1,PEPCO,,,X,,,X,,,,,,Variable
 Bethesda_MD_Electric_Bill_sample,1,11,1,2,MD,,,X,X,,,,,,,,Variable
 Bethesda_MD_Electric_Bill_sample,1,11,1,3,CUSTOMER,,,X,X,,,,,,,,Variable
