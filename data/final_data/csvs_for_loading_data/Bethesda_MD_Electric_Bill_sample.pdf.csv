@@ -18,6 +18,7 @@ Bethesda_MD_Electric_Bill_sample,1,8,1,5,11l1lll11l1111lll11l,,X,,,,,,,,,,Unknow
 Bethesda_MD_Electric_Bill_sample,1,9,1,1,3,,,,,,,,,,,,PageHeader
 Bethesda_MD_Electric_Bill_sample,1,9,1,2,10000008,,,,,,,,,,,,PageHeader
 Bethesda_MD_Electric_Bill_sample,1,9,1,3,13,,,,,,,,,,,,PageHeader
+Bethesda_MD_Electric_Bill_sample,1,8,1,5,11l1lll11l1111lll11l,,X,,,,,,,,,,Unknown
 Bethesda_MD_Electric_Bill_sample,1,10,1,1,Your,,,,,,,,,,,,BillHeader
 Bethesda_MD_Electric_Bill_sample,1,10,1,2,electric,,,,,,,,,,,,BillHeader
 Bethesda_MD_Electric_Bill_sample,1,10,1,3,bill,,,,,,,,,,,,BillHeader
@@ -245,6 +246,7 @@ Bethesda_MD_Electric_Bill_sample,1,21,1,3,Electricity,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,1,21,1,4,use,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,1,21,1,5,in,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,1,21,1,6,kWh,,,,,,,,,,,,GeneralText
+Bethesda_MD_Electric_Bill_sample,1,21,2,4,Jul,,,X,,,X,,,,,,Variable
 Bethesda_MD_Electric_Bill_sample,1,21,2,1,Daily,,,,,,,,,,,,MiscPhraseText
 Bethesda_MD_Electric_Bill_sample,1,21,2,2,temperature,,,,,,,,,,,,MiscPhraseText
 Bethesda_MD_Electric_Bill_sample,1,21,2,3,averages:,,,,,,,,,,,,MiscPhraseText
@@ -422,16 +424,8 @@ Bethesda_MD_Electric_Bill_sample,2,18,9,1,Date,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,18,10,1,Date,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,18,11,1,Of,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,18,11,2,Days,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,2,18,12,1,Use,,,,,,,,,,,,MiscPhraseText
+Bethesda_MD_Electric_Bill_sample,2,18,12,1,Use,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,18,13,1,4ED353620226,,,X,,,,,,,,X,Variable
-Bethesda_MD_Electric_Bill_sample,2,18,14,1,Use,,,,,,,,,,,,DateText
-Bethesda_MD_Electric_Bill_sample,2,18,14,2,(kWh),,,,,,,,,,,,DateText
-Bethesda_MD_Electric_Bill_sample,2,18,15,1,Jul,,,X,,,X,,,,,,Variable
-Bethesda_MD_Electric_Bill_sample,2,18,15,2,6,,,X,,,X,,,,,,Variable
-Bethesda_MD_Electric_Bill_sample,2,18,16,1,Jun,,,X,,,X,,,,,,Variable
-Bethesda_MD_Electric_Bill_sample,2,18,16,2,6,,,X,,,X,,,,,,Variable
-Bethesda_MD_Electric_Bill_sample,2,18,17,1,31,,,X,,,,,,,X,,Variable
-Bethesda_MD_Electric_Bill_sample,2,18,18,1,529,,,X,,,,,,,X,,Variable
 Bethesda_MD_Electric_Bill_sample,2,19,1,1,Your,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,19,1,2,meter,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,19,1,3,records,,,,,,,,,,,,GeneralText
@@ -458,14 +452,15 @@ Bethesda_MD_Electric_Bill_sample,2,19,2,9,your,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,19,2,10,energy,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,19,2,11,use,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,19,2,12,data.,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,2,20,1,1,Your,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,2,20,1,2,next,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,2,20,1,3,bill,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,2,20,1,4,period,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,2,20,1,5,is,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,2,20,1,6,scheduled,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,2,20,1,7,to,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,2,20,1,8,end,,,,,,,,,,,,GeneralText
+Bethesda_MD_Electric_Bill_sample,2,18,13,1,4ED353620226,,,X,,,,,,,,X,Variable
+Bethesda_MD_Electric_Bill_sample,2,20,1,1,Your,,,,,,,,,,,,DateText
+Bethesda_MD_Electric_Bill_sample,2,20,1,2,next,,,,,,,,,,,,DateText
+Bethesda_MD_Electric_Bill_sample,2,20,1,3,bill,,,,,,,,,,,,DateText
+Bethesda_MD_Electric_Bill_sample,2,20,1,4,period,,,,,,,,,,,,DateText
+Bethesda_MD_Electric_Bill_sample,2,20,1,5,is,,,,,,,,,,,,DateText
+Bethesda_MD_Electric_Bill_sample,2,20,1,6,scheduled,,,,,,,,,,,,DateText
+Bethesda_MD_Electric_Bill_sample,2,20,1,7,to,,,,,,,,,,,,DateText
+Bethesda_MD_Electric_Bill_sample,2,20,1,8,end,,,,,,,,,,,,DateText
 Bethesda_MD_Electric_Bill_sample,2,20,1,9,on,,,,,,,,,,,,DateText
 Bethesda_MD_Electric_Bill_sample,2,20,1,10,August,,,X,,,X,,,,,,Variable
 Bethesda_MD_Electric_Bill_sample,2,20,1,11,"3,",,,X,,,X,,,,,,Variable
@@ -499,7 +494,7 @@ Bethesda_MD_Electric_Bill_sample,2,22,1,12,you.,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,22,2,1,Current,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,22,2,2,charges,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,22,2,3,for,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,2,22,2,4,31,,,,,,,,,,,,GeneralText
+Bethesda_MD_Electric_Bill_sample,2,22,2,4,31,,,,,,X,,,,,,Variable
 Bethesda_MD_Electric_Bill_sample,2,22,2,5,"days,",,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,22,2,6,summer,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,22,2,7,rates,,,,,,,,,,,,GeneralText
@@ -516,7 +511,8 @@ Bethesda_MD_Electric_Bill_sample,2,23,2,5,charge,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,23,3,1,Amount($),,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,24,1,1,Distribution,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,2,24,1,2,Services:,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,2,25,1,1,Customer,,,,,,,,,,,,GeneralText
+Bethesda_MD_Electric_Bill_sample,2,22,2,4,31,,,,,,X,,,,,,Variable
+Bethesda_MD_Electric_Bill_sample,2,25,1,1,Customer,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,25,1,2,Charge,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,25,2,1,7.6,,,X,,,,,,,X,,Variable
 Bethesda_MD_Electric_Bill_sample,2,26,1,1,Energy,,,,,,,,,,,,IntUsageText
@@ -524,17 +520,17 @@ Bethesda_MD_Electric_Bill_sample,2,26,1,2,Charge,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,26,2,1,529,,,X,,,,,,,X,,Variable
 Bethesda_MD_Electric_Bill_sample,2,26,2,2,kWh,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,26,2,3,X,,,,,,,,,,,,IntUsageText
-Bethesda_MD_Electric_Bill_sample,2,26,2,4,$0.06 ,,,,,,,,,,,,IntUsageText
+Bethesda_MD_Electric_Bill_sample,2,26,2,4,$0.06 ,,,,,,,,,,X,,Variable
 Bethesda_MD_Electric_Bill_sample,2,26,2,5,per,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,26,2,6,kWh,,,,,,,,,,,,IntUsageText
-Bethesda_MD_Electric_Bill_sample,2,26,3,1,33.15,,,,,,,,,,,,IntUsageText
+Bethesda_MD_Electric_Bill_sample,2,26,3,1,33.15,,,,,,,,,,X,,Variable
 Bethesda_MD_Electric_Bill_sample,2,27,1,1,Grid,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,27,1,2,Resiliency,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,27,1,3,Charge,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,27,2,1,529,,,X,,,,,,,X,,Variable
 Bethesda_MD_Electric_Bill_sample,2,27,2,2,kWh,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,27,2,3,X,,,,,,,,,,,,IntUsageText
-Bethesda_MD_Electric_Bill_sample,2,27,2,4,$0.00 ,,,,,,,,,,,,IntUsageText
+Bethesda_MD_Electric_Bill_sample,2,27,2,4,$0.00 ,,,,,,,,,,X,,Variable
 Bethesda_MD_Electric_Bill_sample,2,27,2,5,per,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,27,2,6,kWh,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,27,3,1,0.06,,,X,,,,,,,X,,Variable
@@ -546,30 +542,30 @@ Bethesda_MD_Electric_Bill_sample,2,28,2,2,kWh,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,28,2,3,X,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,32,2,2,kWh,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,32,2,3,X,,,,,,,,,,,,IntUsageText
-Bethesda_MD_Electric_Bill_sample,2,32,2,4,$0.0002912-,,,,,,,,,,,,IntUsageText
+Bethesda_MD_Electric_Bill_sample,2,32,2,4,$0.0002912-,,,,,,,,,,X,,Variable
 Bethesda_MD_Electric_Bill_sample,2,32,2,5,per,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,32,2,6,kWh,,,,,,,,,,,,IntUsageText
-Bethesda_MD_Electric_Bill_sample,2,32,3,1,0.15−,,,,,,,,,,,,IntUsageText
+Bethesda_MD_Electric_Bill_sample,2,32,3,1,0.15−,,,,,,,,,,X,,Variable
 Bethesda_MD_Electric_Bill_sample,2,33,1,1,CNM,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,33,1,2,Credit:,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,33,1,3,CREFA,,,,,,,,,,,,IntUsageText
-Bethesda_MD_Electric_Bill_sample,2,33,2,1,150-,,,,,,,,,,,,IntUsageText
+Bethesda_MD_Electric_Bill_sample,2,33,2,1,150-,,,,,,,,,,X,,Variable
 Bethesda_MD_Electric_Bill_sample,2,33,2,2,kWh,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,33,2,3,X,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,33,2,4,$0.11 ,,,X,,,,,,,X,,Variable
 Bethesda_MD_Electric_Bill_sample,2,33,2,5,per,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,33,2,6,kWh,,,,,,,,,,,,IntUsageText
-Bethesda_MD_Electric_Bill_sample,2,33,3,1,16.35-,,,,,,,,,,,,IntUsageText
+Bethesda_MD_Electric_Bill_sample,2,33,3,1,16.35-,,,,,,,,,,X,,Variable
 Bethesda_MD_Electric_Bill_sample,2,33,4,1,CNM,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,33,4,2,Credit:,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,33,4,3,CREFB,,,,,,,,,,,,IntUsageText
-Bethesda_MD_Electric_Bill_sample,2,33,5,1,100-,,,,,,,,,,,,IntUsageText
+Bethesda_MD_Electric_Bill_sample,2,33,5,1,100-,,,,,,,,,,X,,Variable
 Bethesda_MD_Electric_Bill_sample,2,33,5,2,kWh,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,33,5,3,X,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,33,5,4,$0.11 ,,,X,,,,,,,X,,Variable
 Bethesda_MD_Electric_Bill_sample,2,33,5,5,per,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,33,5,6,kWh,,,,,,,,,,,,IntUsageText
-Bethesda_MD_Electric_Bill_sample,2,33,6,1,10.90-,,,,,,,,,,,,IntUsageText
+Bethesda_MD_Electric_Bill_sample,2,33,6,1,10.90-,,,,,,,,,,X,,Variable
 Bethesda_MD_Electric_Bill_sample,2,34,1,1,Total,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,34,1,2,Electric,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,2,34,1,3,Delivery,,,,,,,,,,,,IntUsageText
@@ -821,15 +817,15 @@ Bethesda_MD_Electric_Bill_sample,3,9,1,2,Services:,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,3,10,1,1,Energy,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,3,10,1,2,Charge,,,,,,,,,,,,IntUsageText
 Bethesda_MD_Electric_Bill_sample,3,10,2,1,529,,,X,,,,,,,X,,Variable
-Bethesda_MD_Electric_Bill_sample,3,17,1,1, ,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,3,18,1,1, ,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,3,19,1,1, ,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,3,20,1,1, ,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,3,21,1,1, ,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,3,22,1,1, ,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,3,23,1,1,I,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,3,24,1,1,3,,,,,,,,,,,,GeneralText
-Bethesda_MD_Electric_Bill_sample,3,24,1,2,10000008,,,,,,,,,,,,GeneralText
+Bethesda_MD_Electric_Bill_sample,3,17,1,1, ,,,,,,,,,,,,HeaderText
+Bethesda_MD_Electric_Bill_sample,3,18,1,1, ,,,,,,,,,,,,HeaderText
+Bethesda_MD_Electric_Bill_sample,3,19,1,1, ,,,,,,,,,,,,HeaderText
+Bethesda_MD_Electric_Bill_sample,3,20,1,1, ,,,,,,,,,,,,HeaderText
+Bethesda_MD_Electric_Bill_sample,3,21,1,1, ,,,,,,,,,,,,HeaderText
+Bethesda_MD_Electric_Bill_sample,3,22,1,1, ,,,,,,,,,,,,HeaderText
+Bethesda_MD_Electric_Bill_sample,3,23,1,1,I,,,,,,,,,,,,HeaderText
+Bethesda_MD_Electric_Bill_sample,3,24,1,1,3,,,,,,,,,,,,HeaderText
+Bethesda_MD_Electric_Bill_sample,3,24,1,2,10000008,,,,,,,,,,,,HeaderText
 Bethesda_MD_Electric_Bill_sample,3,24,1,3,14,,,,,,,,,,,,HeaderText
 Bethesda_MD_Electric_Bill_sample,3,24,2,1,PEPCO,,,X,X,,,,,,,,Variable
 Bethesda_MD_Electric_Bill_sample,3,24,2,2,MD,,,X,X,,,,,,,,Variable
@@ -1050,3 +1046,4 @@ Bethesda_MD_Electric_Bill_sample,3,36,1,1,Page,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,3,36,1,2,3,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,3,36,1,3,of,,,,,,,,,,,,GeneralText
 Bethesda_MD_Electric_Bill_sample,3,36,1,4,3,,,,,,,,,,,,GeneralText
+Bethesda_MD_Electric_Bill_sample,3,26,1,9,2017,,,X,,,X,,,,,,Variable
