@@ -39,7 +39,7 @@ class GenerateBillData:
         self.unknown_text = []
         self.misc_phrase_text = ["16F to 18F", "29F to 35F", "99C to 25C", "70C to 14C"]
         self.n_documents_generated = 1
-        self.n_sentences = 1000
+        self.n_sentences = 2500
 
         self.csv_path = os.getenv(
             "CSV_PATH", "../data/final_data/csvs_for_loading_data/"
