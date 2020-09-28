@@ -35,12 +35,17 @@ class GenerateBillData:
         self.constant_price_text = []
         self.constant_range_text = []
         self.unknown_text = []
+        self.n_documents_generated = 1
 
         self.csv_path = os.getenv(
             "CSV_PATH", "../data/final_data/csvs_for_loading_data/"
         )
         self.bill_format_csv_path = os.getenv(
             "BILL_FORMAT_PATH", "../data/final_data/bill_format/"
+        )
+        
+        self.write_bills_path = os.getenv(
+            "WRITE_BILLS_PATH", "../data/final_data/bills/"
         )
         
         self.fake = Faker()
@@ -193,6 +198,8 @@ class GenerateBillData:
         random_client_address = self.generate_address()
         random_service_address = self.generate_address()
         random_name_address = [random_name, random_client_address]
+        file_name_for_generation = random_name + "-" + random_account_number
+        file_name_for_generation = file_name_for_generation.replace(" ", "_")
         
         for file_name in os.listdir(self.bill_format_csv_path):
             if file_name.endswith(".csv"):
@@ -267,11 +274,17 @@ class GenerateBillData:
                     elif (variable_after == 'unknown_text'):
                         generated_bill_text = generated_bill_text + random.choice(self.unknown_text) + self.new_line_2
         
-        print(generated_bill_text)       
+        #print(generated_bill_text)  
+        
+        with open(self.write_bills_path + file_name_for_generation + ".txt", "w+") as f:
+            f.write(generated_bill_text)      
 
     def execute_pipeline(self):
         self.read_csvs_and_populate_constant_text()
-        self.retrieve_bill_format_and_generate_bill()
+        
+        
+        for _ in range(self.n_documents_generated): 
+            self.retrieve_bill_format_and_generate_bill()
 
-        #self.generate_account_number()
+            #self.generate_account_number()
 
