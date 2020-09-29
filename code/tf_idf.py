@@ -24,13 +24,6 @@ def read_file(file_name):
         data = f.read()
 
     return data
-    
-def find_n_neighbours(df, n):
-    order = np.argsort(df.values, axis=1)[:, :n]
-    
-    df = df.apply(lambda x: pd.Series(x.sort_values(ascending=False).iloc[:n].index, index=['top_{}'.format(i) for i in range(1, n+1)]), axis=1)
-    
-    return df
 
 # ################################################################################################
 # Defining Variables
@@ -85,18 +78,16 @@ tf_idf_vector = tfidf_transformer.transform(X)
 
 # Retrieve similarities of dataframe above and convert it to a dataframe
 cosine_matrix = cosine_similarity(tf_idf_vector)
-#np.fill_diagonal(cosine_matrix, 0)
 
 file_similarity_df = pd.DataFrame(data=cosine_matrix, columns=file_names, index=file_names)
 
 # Retrieve second highest value for each row since when documents match to themselves, it will always be one.
 file_similarity_df['max_value'] = file_similarity_df.apply(lambda row: row.nlargest(2).values[-1], axis=1)
-result_df = file_similarity_df[file_similarity_df['max_value'] > 0.65]
+result_df = file_similarity_df[file_similarity_df['max_value'] > 0.60]
 
 suspicious_documents = result_df.index.tolist()
 
 print(suspicious_documents)
-
 
 # ################################################################################################
 # End
