@@ -1,4 +1,5 @@
-from generate_bill_data import GenerateBillData
+from load_data import load_bill_data
 
-generate_bill_data = GenerateBillData()
-generate_bill_data.execute_pipeline()
+
+bill_df = load_bill_data()
+print(bill_df.head())
