@@ -83,7 +83,7 @@ file_similarity_df = pd.DataFrame(data=cosine_matrix, columns=file_names, index=
 
 # Retrieve second highest value for each row since when documents match to themselves, it will always be one.
 file_similarity_df['max_value'] = file_similarity_df.apply(lambda row: row.nlargest(2).values[-1], axis=1)
-result_df = file_similarity_df[file_similarity_df['max_value'] > 0.60]
+result_df = file_similarity_df[file_similarity_df['max_value'] > 0.3]
 
 suspicious_documents = result_df.index.tolist()
 
