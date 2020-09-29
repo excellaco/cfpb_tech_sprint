@@ -6,6 +6,7 @@ import glob
 import os
 import pandas as pd
 import nltk
+import numpy as np
 nltk.download('stopwords')
 
 from nltk.corpus import stopwords
@@ -23,10 +24,20 @@ def read_file(file_name):
         data = f.read()
 
     return data
+    
+def find_n_neighbours(df, n):
+    order = np.argsort(df.values, axis=1)[:, :n]
+    
+    df = df.apply(lambda x: pd.Series(x.sort_values(ascending=False).iloc[:n].index, index=['top_{}'.format(i) for i in range(1, n+1)]), axis=1)
+    
+    return df
 
 # ################################################################################################
 # Defining Variables
 # ################################################################################################
+
+new_line = '\n'
+new_line_2 = new_line + new_line
 
 bills_path = os.getenv("WRITE_BILLS_PATH", "../data/final_data/bills/")
 text_files = glob.glob(bills_path + "*.txt")
@@ -69,19 +80,22 @@ idf = tfidf_transformer.idf_
 # Print idf values
 df_idf = pd.DataFrame(tfidf_transformer.idf_, index=vectorizer.get_feature_names(), columns=["idf_weights"])
 
-# Sort ascending 
-df_idf.sort_values(by=['idf_weights'])
-#print(df_idf)
-
 # Entire dataframe of files.
 tf_idf_vector = tfidf_transformer.transform(X)
 
 # Retrieve similarities of dataframe above and convert it to a dataframe
 cosine_matrix = cosine_similarity(tf_idf_vector)
-df = pd.DataFrame(data=cosine_matrix, columns=file_names, index=file_names)
+#np.fill_diagonal(cosine_matrix, 0)
 
-print(df)
+file_similarity_df = pd.DataFrame(data=cosine_matrix, columns=file_names, index=file_names)
 
+# Retrieve second highest value for each row since when documents match to themselves, it will always be one.
+file_similarity_df['max_value'] = file_similarity_df.apply(lambda row: row.nlargest(2).values[-1], axis=1)
+result_df = file_similarity_df[file_similarity_df['max_value'] > 0.65]
+
+suspicious_documents = result_df.index.tolist()
+
+print(suspicious_documents)
 
 
 # ################################################################################################
