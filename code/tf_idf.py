@@ -34,6 +34,7 @@ new_line = '\n'
 new_line_2 = new_line + new_line
 
 bills_path = os.getenv("WRITE_BILLS_PATH", "../data/final_data/bills/")
+model_output_path = os.getenv("MODEL_OUTPUT_PATH", "../data/final_data/bills/")
 text_files = glob.glob(bills_path + "*.txt")
 
 # Setting up data
@@ -102,7 +103,7 @@ suspicious_document_scores_df = suspicious_document_scores_df[suspicious_documen
 
 # Group concat to get the combinations.
 suspicious_document_scores_df = suspicious_document_scores_df.groupby('sus_score').agg({'file_name' : lambda x: ', '.join(x)})
-suspicious_document_scores_df.to_csv('review.csv', index = False)
+suspicious_document_scores_df.to_csv(model_output_path + 'tfidf_cosine_similarity_results.csv', index = False)
 
 # ################################################################################################
 # End
