@@ -37,7 +37,7 @@ new_line = "\n"
 new_line_2 = new_line + new_line
 
 bills_path = os.getenv("WRITE_BILLS_PATH", "../data/final_data/bills/")
-model_output_path = os.getenv("MODEL_OUTPUT_PATH", "../data/final_data/bills/")
+model_output_path = os.getenv("MODEL_OUTPUT_PATH", "../data/final_data/output/")
 text_files = glob.glob(bills_path + "*.txt")
 
 # Setting up data
