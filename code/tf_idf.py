@@ -36,7 +36,7 @@ def read_file(file_name):
 new_line = "\n"
 new_line_2 = new_line + new_line
 
-bills_path = os.getenv("WRITE_BILLS_PATH", "../data/final_data/bills/")
+bills_path = os.getenv("WRITE_BILLS_PATH", "../data/final_data/pepco_bills/")
 model_output_path = os.getenv("MODEL_OUTPUT_PATH", "../data/final_data/output/")
 text_files = glob.glob(bills_path + "*.txt")
 
@@ -85,11 +85,11 @@ file_similarity_df = pd.DataFrame(
     data=cosine_matrix, columns=file_names, index=file_names
 )
 
-# Retrieve second highest value for each row since when documents match to themselves, it will always be one. Threshold was set to .3.
+# Retrieve second highest value for each row since when documents match to themselves, it will always be one. Threshold was set to .35.
 file_similarity_df["max_value"] = file_similarity_df.apply(
     lambda row: row.nlargest(2).values[-1], axis=1
 )
-result_df = file_similarity_df[file_similarity_df["max_value"] > 0.3]
+result_df = file_similarity_df[file_similarity_df["max_value"] > 0.35]
 
 # Retrieve the list of all potential suspicious documents and update a dictionary with the document name & score.
 suspicious_documents = result_df.index.tolist()
