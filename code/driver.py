@@ -1,4 +1,4 @@
-from generate_bill_data import GenerateBillData
+from generate_pepco_bills import GeneratePepcoBills
 
-generate_bill_data = GenerateBillData()
-generate_bill_data.execute_pipeline()
+generate_pepco_bills = GeneratePepcoBills()
+generate_pepco_bills.execute_pipeline()
