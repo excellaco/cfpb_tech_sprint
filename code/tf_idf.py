@@ -7,6 +7,7 @@ import os
 import pandas as pd
 import nltk
 import numpy as np
+from collections import defaultdict
 nltk.download('stopwords')
 
 from nltk.corpus import stopwords
@@ -86,8 +87,28 @@ file_similarity_df['max_value'] = file_similarity_df.apply(lambda row: row.nlarg
 result_df = file_similarity_df[file_similarity_df['max_value'] > 0.3]
 
 suspicious_documents = result_df.index.tolist()
+suspicious_document_scores = {}
 
-print(suspicious_documents)
+for document_name in suspicious_documents:
+    print(document_name)
+    print(new_line_2)
+    
+    if document_name in result_df.index:       
+        values_dict = result_df['max_value'].to_dict()
+        
+        for key, value in values_dict.items():
+        
+            if (key == document_name):
+                suspicious_document_scores.update({document_name:value})   
+
+print(new_line_2)
+new_dict = defaultdict(list)
+
+# Before this, remove values that only appear once.
+for k, v in suspicious_document_scores.items():
+    new_dict[v].append(k)
+    
+print(new_dict)
 
 # ################################################################################################
 # End
