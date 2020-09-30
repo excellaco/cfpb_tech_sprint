@@ -28,3 +28,5 @@ NoHeader,account_number_text,N
 ElectricBillHeader,month_date_text,N
 NoHeader,electric_charge_details_constant_text,N
 NoHeader,electric_charge_details_variable_text,N
+NoHeader,electric_charge_details_variable_text,N
+NoHeader,electric_charge_details_variable_text,N
