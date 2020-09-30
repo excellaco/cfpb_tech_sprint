@@ -380,6 +380,13 @@ class GeneratePepcoBills:
                             + str(random.randint(1, 25)) + " charge types; " + str(random.randint(200, 999)) + " KWH; " + str(random.randint(10, 120)) + " Full Total."
                             + self.new_line_2
                         )
+                    
+                    elif variable_after == "final_footer":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + 'Your daily electricity use for this bill period. Visit My Account at pepco.com to see your hourly electricity use'
+                            + self.new_line_2
+                        )
 
         with open(self.write_bills_path + file_name_for_generation + ".txt", "w+") as f:
             f.write(generated_bill_text)
