@@ -2,7 +2,7 @@
 NoHeader,intro_text,N
 ElectricBillHeader,month_date_text,N
 ElectricBillHeaderFooter,date_range_text,N
-TagLine,tag_line_text,Y
+NoHeader,tag_line_text,N
 NoHeader,customer_name,N
 AccountNumberText,account_number_text,N
 ServiceAddressText,service_address_text,N
@@ -15,12 +15,16 @@ BalanceForwardText,price_text,N
 NewChargesText,price_text,N
 NewCreditsText,price_text,Y
 TotalAmountDueText,price_text,N
-NoHeader,late_payment_text,Y
+NoHeader,late_payment_text,N
 NoHeader,general_text_after_payments,N
 InvoiceFooterText,invoice_footer_text,N
 NoHeader,return_coupon_text,N
 NoHeader,mailer_text,N
 NoHeader,page_footer_text,N
-NoHeader,how_to_contact_text,N
 NoHeader,contact_info_text,N
 NoHeader,electricity_info_text,N
+NoHeader,customer_name,N
+NoHeader,account_number_text,N
+ElectricBillHeader,month_date_text,N
+NoHeader,electric_charge_details_constant_text,N
+NoHeader,electric_charge_details_variable_text,N

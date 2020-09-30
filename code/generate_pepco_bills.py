@@ -26,7 +26,7 @@ class GeneratePepcoBills:
         self.constant_intro_text = ["Delmarva Power: Exelon Company", "Pepco"]
         self.constant_electric_bill_header_text = ["Your electric bill - "]
         self.constant_electric_bill_header_footer_text = ["for the period "]
-        self.constant_tag_line_text = ["Energy for a Changing World."]
+        self.constant_tag_line_text = ["Energy for a Changing World.", "Ways to save - Find tips and programs that help."]
         self.constant_service_address_text = ["Your service Address:"]
         self.constant_bill_issue_date_text = ["Bill Issue date: "]
         self.constant_last_bill_balance_text = ["Balance from your last bill "]
@@ -39,12 +39,18 @@ class GeneratePepcoBills:
 
         # General Lists
         self.general_text_after_payment = [
-            "Your smart electric meter is read wirelessly. Visit My Account at pepco.com to view your daily and hourly energy usage. If you are moving or discontinuing service, please contact Pepco at least three days in advance. Information regarding rate schedules and how to verify the accuracy of your bill will be mailed upon request. Follow us on Twitter at twitter.com/PepcoConnect. Like us on Facebook at facebook.com/PepcoConnect. The EmPOWER MD charge funds programs that can help you reduce your energy consumption and save you money. For more information, including how to participate, go to pepco.com/saveenergy.",
+            "Your smart electric meter is read wirelessly. Visit My Account at pepco.com to view your daily and hourly energy usage. \nIf you are moving or discontinuing service, please contact Pepco at least three days in advance. \nInformation regarding rate schedules and how to verify the accuracy of your bill will be mailed upon request. \nFollow us on Twitter at twitter.com/PepcoConnect. Like us on Facebook at facebook.com/PepcoConnect. \nThe EmPOWER MD charge funds programs that can help you reduce your energy consumption and save you money. For more information, including how to participate, go to pepco.com/saveenergy.",
+            "Your smart electric meter is read wirelessly. Visit My Account at pepco.com to view your daily and hourly energy usage. \nIf you are moving or discontinuing service, please contact Pepco at least three days in advance. \nInformation regarding rate schedules and how to verify the accuracy of your bill will be mailed upon request. \nFollow us on Twitter at twitter.com/PepcoConnect. Like us on Facebook at facebook.com/PepcoConnect.",
             "Find helpful storm preparation and power outage information at delmarva.com  Learn how to save energy and money by registering for MyAccount at www.delmarva.com. Your smart meter is read wirelessly. Visit My Account at delmarva.com to view your daily and hourly energy usage. The EmPOWER MD charge funds programs that can help you reduce your energy consumption and save you money. For more information, including how to participate, go to delmarva.com/saveenergy.",
         ]
 
         # Variable After Lists
-        self.n_documents_generated = 3
+        self.constant_charge_summary_text = ["Summary of your charges"]
+        self.constant_contact_info_text = ["How to contact us. \nCustomer Service (Mon-Fri,7am - 8 pm)\t202-833-7500\n.  Hearing Impaired (TTY)\t202-872-2369\n.  ¿Problemas con la factura?\t202-872-4641\nElectric emergencies & outages (24 hours)\t1-877-737-2662\nVisit pepco.com for service, billing and correspondence information."]
+        self.constant_electricy_info_text = ["Your monthly Electricity use in kWh\nDaily temperature averages: "]
+        
+        # Additional Variables
+        self.n_documents_generated = 1
 
         self.bill_format_csv_path = os.getenv(
             "BILL_FORMAT_PATH", "../data/final_data/bill_format/"
@@ -75,9 +81,11 @@ class GeneratePepcoBills:
         random_number = random_number[:6] + "-" + random_number[6:]
 
         return random_number
-
+        
     def generate_late_payment_notice(self):
-        pass
+        result = "After " + self.generate_date() + " a Late Payment Charge of $" + str(random.uniform(0.00, 99.99)) + " will be added, increasing the amount due to $" + str(random.uniform(0.00, 99.99)) + "."
+        
+        return result 
 
     def generate_name(self):
         return self.fake.name()
@@ -88,6 +96,10 @@ class GeneratePepcoBills:
     def generate_random_date_range_text(self):
         date_range_text = self.generate_date() + " to " + self.generate_date()
         return date_range_text
+    
+    def generate_temp_range(self):
+        result = str(random.randint(50,99)) + ' to ' + str(random.randint(100,120))
+        return result
 
     # Blueprint for how we will generate a bill. Returns a list of values that contains line types.
     def retrieve_bill_format_and_generate_bill(self):
@@ -98,6 +110,14 @@ class GeneratePepcoBills:
         random_name = self.generate_name()
         random_client_address = self.generate_address()
         random_service_address = self.generate_address()
+        random_date_range = self.generate_random_date_range_text()
+        
+        random_date_one = self.generate_date()
+        random_date_two = self.generate_date()
+        random_date_three = self.generate_date()
+        
+        random_date = [random_date_one, random_date_two, random_date_three]
+        
         random_name_address = [random_name, random_client_address]
         file_name_for_generation = random_name + "-" + random_account_number
         file_name_for_generation = file_name_for_generation.replace(" ", "_")
@@ -181,7 +201,9 @@ class GeneratePepcoBills:
                         )
 
                     elif bill_format == "NoHeader":
-                        pass
+                        generated_bill_text = (
+                            generated_bill_text
+                        )
 
                     elif bill_format == "PostedPaymentText":
                         generated_bill_text = (
@@ -219,10 +241,143 @@ class GeneratePepcoBills:
                             + self.new_line_2
                         )
 
-                    elif variable_after == "client_address_text":
+                    elif variable_after == "black_line_text":
                         generated_bill_text = (
                             generated_bill_text
-                            + random_client_address
+                            + '---------------------------------------------------------------------------------------------------'
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "charge_summary_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_charge_summary_text)
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "contact_info_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_contact_info_text)
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "customer_name":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random_name
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "date_range_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random_date_range
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "electricity_info_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_electricy_info_text) + self.generate_temp_range()
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "full_date_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(random_date)
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "general_text_after_payments":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.general_text_after_payment)
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "intro_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_intro_text)
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "invoice_footer_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + "Invoice Number: " + str(random.randint(100000000000, 999999999999)) + "\tPage 1"
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "late_payment_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + self.generate_late_payment_notice()
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "mailer_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random_name + '\n' + random_client_address
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "month_date_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(random_date)
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "page_footer_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + str(random.randint(100000000000, 999999999999))
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "price_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + str(random.uniform(0.00, 99.99))
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "return_coupon_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + "Return this coupon with your payment made payable to Pepco"
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "service_address_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random_service_address
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "tag_line_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random.choice(self.constant_tag_line_text)
+                            + self.new_line_2
+                        )
+                    
+                    elif variable_after == "electric_charge_details_constant_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + "Details of your Electric Charges "
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "electric_charge_details_variable_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + str(random.randint(1, 25)) + " charge types; " + str(random.randint(200, 999)) + " KWH; " + str(random.randint(10, 120)) + " Full Total."
                             + self.new_line_2
                         )
 
