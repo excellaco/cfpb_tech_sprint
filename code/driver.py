@@ -1,5 +1,4 @@
-from load_data import load_bill_data
+from generate_pepco_bills import GeneratePepcoBills
 
-
-bill_df = load_bill_data()
-print(bill_df.head())
+generate_pepco_bills = GeneratePepcoBills()
+generate_pepco_bills.execute_pipeline()

@@ -9,5 +9,7 @@ def load_bill_data():
     dirpath = Path(data_path)
     for filename in dirpath.iterdir():
         file_text = filename.read_text()
-        bill_df = bill_df.append({"file_name": filename.name, "file_text": file_text}, ignore_index=True)
+        bill_df = bill_df.append(
+            {"file_name": filename.name, "file_text": file_text}, ignore_index=True
+        )
     return bill_df
