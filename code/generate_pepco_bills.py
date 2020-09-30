@@ -50,7 +50,7 @@ class GeneratePepcoBills:
         self.constant_electricy_info_text = ["Your monthly Electricity use in kWh\nDaily temperature averages: "]
         
         # Additional Variables
-        self.n_documents_generated = 1
+        self.n_documents_generated = 2500
 
         self.bill_format_csv_path = os.getenv(
             "BILL_FORMAT_PATH", "../data/final_data/bill_format/"
