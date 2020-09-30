@@ -70,7 +70,8 @@ X = vectorizer.fit_transform(corpus)
 X.todense()  # Convert from sparse to dense matrix.
 
 # Transform a count matrix to a normalized tf or tf-idf representation
-# The goal of using tf-idf instead of the raw frequencies of occurrence of a token in a given document is to scale down the impact of tokens that occur very frequently in a given corpus and that are hence empirically less informative
+# The goal of using tf-idf instead of the raw frequencies of occurrence of a token in a given document is to scale down the impact of tokens that occur very
+# frequently in a given corpus and that are hence empirically less informative
 # than features that occur in a small fraction of the training corpus.
 tfidf_transformer = TfidfTransformer(smooth_idf=True, use_idf=True)
 tfidf_transformer.fit(X)
@@ -102,6 +103,8 @@ for document_name in suspicious_documents:
         for key, value in values_dict.items():
 
             if key == document_name:
+                document_name_index = document_name.rfind("/")
+                document_name = document_name[document_name_index + 1 :].strip()
                 suspicious_document_scores.update({document_name: value})
 
 # Remove values that appear once because we want to map all suspicious documents with one another. Need a count of 2 or higher.
@@ -116,9 +119,15 @@ suspicious_document_scores_df = suspicious_document_scores_df[
 suspicious_document_scores_df = suspicious_document_scores_df.groupby("sus_score").agg(
     {"file_name": lambda x: ", ".join(x)}
 )
+
+suspicious_document_scores_df = suspicious_document_scores_df.rename(
+    columns={"file_name": "suspicious_matches"}
+)
 suspicious_document_scores_df.to_csv(
     model_output_path + "tfidf_cosine_similarity_results.csv", index=False
 )
+
+print(suspicious_document_scores_df)
 
 # ################################################################################################
 # End
