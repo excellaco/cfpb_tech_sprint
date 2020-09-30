@@ -90,8 +90,6 @@ suspicious_documents = result_df.index.tolist()
 suspicious_document_scores = {}
 
 for document_name in suspicious_documents:
-    print(document_name)
-    print(new_line_2)
     
     if document_name in result_df.index:       
         values_dict = result_df['max_value'].to_dict()
@@ -101,14 +99,13 @@ for document_name in suspicious_documents:
             if (key == document_name):
                 suspicious_document_scores.update({document_name:value})   
 
-print(new_line_2)
-new_dict = defaultdict(list)
+# Remove values that appear once
+suspicious_document_scores_df = pd.DataFrame(list(suspicious_document_scores.items()),columns = ['file_name','sus_score']) 
+suspicious_document_scores_df = suspicious_document_scores_df[suspicious_document_scores_df.groupby('sus_score').sus_score.transform(len) > 1]
 
-# Before this, remove values that only appear once.
-for k, v in suspicious_document_scores.items():
-    new_dict[v].append(k)
-    
-print(new_dict)
+# Group concat
+suspicious_document_scores_df = suspicious_document_scores_df.groupby('sus_score').agg({'file_name' : lambda x: ', '.join(x)})
+suspicious_document_scores_df.to_csv('review.csv', index = False)
 
 # ################################################################################################
 # End
