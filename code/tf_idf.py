@@ -51,7 +51,7 @@ df = pd.DataFrame(data)
 # ML Portion
 # ################################################################################################
 
-# Creating corpus
+# Creating corpus. (Collection of text)
 corpus = [] 
 
 for i in range(df['file_data'].size):
@@ -60,6 +60,7 @@ for i in range(df['file_data'].size):
 # Stopwords are the English words which does not add much meaning to a sentence.
 stop_words = stopwords.words('english')
 
+# Tf-idf focuses on more relevant words.
 vectorizer = TfidfVectorizer(stop_words = stop_words)
 X = vectorizer.fit_transform(corpus)
 X.todense() # Convert from sparse to dense matrix.
@@ -69,23 +70,19 @@ X.todense() # Convert from sparse to dense matrix.
 # than features that occur in a small fraction of the training corpus.
 tfidf_transformer = TfidfTransformer(smooth_idf=True, use_idf=True)
 tfidf_transformer.fit(X)
-idf = tfidf_transformer.idf_
-
-# Print idf values
-df_idf = pd.DataFrame(tfidf_transformer.idf_, index=vectorizer.get_feature_names(), columns=["idf_weights"])
 
 # Entire dataframe of files.
 tf_idf_vector = tfidf_transformer.transform(X)
 
 # Retrieve similarities of dataframe above and convert it to a dataframe
 cosine_matrix = cosine_similarity(tf_idf_vector)
-
 file_similarity_df = pd.DataFrame(data=cosine_matrix, columns=file_names, index=file_names)
 
-# Retrieve second highest value for each row since when documents match to themselves, it will always be one.
+# Retrieve second highest value for each row since when documents match to themselves, it will always be one. Threshold was set to .3.
 file_similarity_df['max_value'] = file_similarity_df.apply(lambda row: row.nlargest(2).values[-1], axis=1)
 result_df = file_similarity_df[file_similarity_df['max_value'] > 0.3]
 
+# Retrieve the list of all potential suspicious documents and update a dictionary with the document name & score.
 suspicious_documents = result_df.index.tolist()
 suspicious_document_scores = {}
 
@@ -99,11 +96,11 @@ for document_name in suspicious_documents:
             if (key == document_name):
                 suspicious_document_scores.update({document_name:value})   
 
-# Remove values that appear once
+# Remove values that appear once because we want to map all suspicious documents with one another. Need a count of 2 or higher.
 suspicious_document_scores_df = pd.DataFrame(list(suspicious_document_scores.items()),columns = ['file_name','sus_score']) 
 suspicious_document_scores_df = suspicious_document_scores_df[suspicious_document_scores_df.groupby('sus_score').sus_score.transform(len) > 1]
 
-# Group concat
+# Group concat to get the combinations.
 suspicious_document_scores_df = suspicious_document_scores_df.groupby('sus_score').agg({'file_name' : lambda x: ', '.join(x)})
 suspicious_document_scores_df.to_csv('review.csv', index = False)
 
