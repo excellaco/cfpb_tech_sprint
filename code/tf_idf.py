@@ -89,7 +89,7 @@ file_similarity_df = pd.DataFrame(
 file_similarity_df["max_value"] = file_similarity_df.apply(
     lambda row: row.nlargest(2).values[-1], axis=1
 )
-result_df = file_similarity_df[file_similarity_df["max_value"] > 0.35]
+result_df = file_similarity_df[file_similarity_df["max_value"] > 0.30]
 
 # Retrieve the list of all potential suspicious documents and update a dictionary with the document name & score.
 suspicious_documents = result_df.index.tolist()
