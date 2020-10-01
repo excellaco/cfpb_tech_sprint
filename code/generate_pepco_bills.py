@@ -47,7 +47,7 @@ class GeneratePepcoBills:
         ]
 
         # Additional Variables
-        self.n_documents_generated = 1
+        self.n_documents_generated = 2500
 
         self.bill_format_csv_path = os.getenv(
             "BILL_FORMAT_PATH", "../data/final_data/bill_format/"
