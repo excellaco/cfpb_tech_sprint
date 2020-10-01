@@ -6,16 +6,6 @@ import os
 import random
 from datetime import datetime, timedelta
 
-# Bill Generation Process
-# OCR software read bills in and provided a CSV of each bill, separating the lines of the bill into different rows.
-# We manually assigned metadata to each separated line. Metadata included two additional columns.
-#   1st Column: Bill Category. This gives us insight on what type of bill we are working with.
-#   2nd Column: Line Type. This line type can be either constant_text, random_metric_text, random_nunber_for_metric_text, account_number, client_name, service_name, client_address, or service_address.
-
-# Outside of the CSV, we also take note of the account number format. (i.e. Cell Phone may be ###-##-####, as electric may be ##### ##)
-# In addition, we summarize the bill categories and provide each bill category a format for text generation.
-
-
 class GeneratePepcoBills:
     def __init__(self):
         self.new_line = "\n"
@@ -57,7 +47,7 @@ class GeneratePepcoBills:
         ]
 
         # Additional Variables
-        self.n_documents_generated = 2500
+        self.n_documents_generated = 1
 
         self.bill_format_csv_path = os.getenv(
             "BILL_FORMAT_PATH", "../data/final_data/bill_format/"
@@ -123,7 +113,7 @@ class GeneratePepcoBills:
 
         random_account_number = self.generate_account_number()
         random_name = self.generate_name()
-        random_client_address = self.generate_address()
+        random_pepco_address = 'PO BOX 13608\nPHILADELPHIA PA 19101'
         random_service_address = self.generate_address()
         random_date_range = self.generate_random_date_range_text()
 
@@ -133,7 +123,6 @@ class GeneratePepcoBills:
 
         random_date = [random_date_one, random_date_two, random_date_three]
 
-        random_name_address = [random_name, random_client_address]
         file_name_for_generation = random_name + "-" + random_account_number
         file_name_for_generation = file_name_for_generation.replace(" ", "_")
 
@@ -335,7 +324,7 @@ class GeneratePepcoBills:
                             generated_bill_text
                             + random_name
                             + "\n"
-                            + random_client_address
+                            + random_service_address
                             + self.new_line_2
                         )
 
@@ -404,6 +393,13 @@ class GeneratePepcoBills:
                         generated_bill_text = (
                             generated_bill_text
                             + "Your daily electricity use for this bill period. Visit My Account at pepco.com to see your hourly electricity use"
+                            + self.new_line_2
+                        )
+                        
+                    elif variable_after == "pepco_address_text":
+                        generated_bill_text = (
+                            generated_bill_text
+                            + random_pepco_address
                             + self.new_line_2
                         )
 
