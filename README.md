@@ -11,5 +11,5 @@ Contains the following files:
 
 ### Data folder
 Contains two subfolders:
-1. Initial Ideas - contains base documents and raw text extraction .csv files
-2. Final Data - Contains base documents, intermediate text extraction documents, and final model output files
+1. Initial Ideas - contains raw collection of base documents and text extraction .csv files
+2. Final Data - Contains select collection of base documents, related text extraction .csv files, and model output files
